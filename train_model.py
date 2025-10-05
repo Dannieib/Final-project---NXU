@@ -1,0 +1,18 @@
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+import joblib
+
+# Load your cleaned dataset
+df = pd.read_csv("lg_customer_pricing_dataset.csv")
+
+# Define features and target
+X = df[['LGPrice', 'CompetitorPrice']]
+y = df['Spend']
+
+# Train a simple regression model
+model = LinearRegression()
+model.fit(X, y)
+
+# Save model for deployment
+joblib.dump(model, "pricing_model.pkl")
+print("✅ Model trained and saved successfully as pricing_model.pkl")
