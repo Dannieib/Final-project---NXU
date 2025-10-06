@@ -15,4 +15,3 @@ model.fit(X, y)
 
 # Save model for deployment
 joblib.dump(model, "pricing_model.pkl")
-print("✅ Model trained and saved successfully as pricing_model.pkl")
